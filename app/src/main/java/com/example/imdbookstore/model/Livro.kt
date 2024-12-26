@@ -1,4 +1,4 @@
-package com.example.imdbookstore.db
+package com.example.imdbookstore.model
 
 // Modelo de Livro
 data class Livro(

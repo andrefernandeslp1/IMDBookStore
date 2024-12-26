@@ -11,8 +11,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.imdbookstore.R
+import com.example.imdbookstore.model.*
 import com.example.imdbookstore.db.*
+import com.example.imdbookstore.adapter.*
 
 class ListaLivrosActivity : AppCompatActivity() {
 
@@ -63,31 +64,31 @@ class ListaLivrosActivity : AppCompatActivity() {
     }
 }
 
-// Adapter para RecyclerView
-class LivroAdapter(
-    private val livros: List<Livro>,
-    private val onItemClick: (Livro) -> Unit
-) : RecyclerView.Adapter<LivroAdapter.LivroViewHolder>() {
+// // Adapter para RecyclerView
+// class LivroAdapter(
+//     private val livros: List<Livro>,
+//     private val onItemClick: (Livro) -> Unit
+// ) : RecyclerView.Adapter<LivroAdapter.LivroViewHolder>() {
 
-    inner class LivroViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val titulo = view.findViewById<TextView>(R.id.textViewTitulo)
-        val autor = view.findViewById<TextView>(R.id.textViewAutor)
-        val capa = view.findViewById<ImageView>(R.id.imageViewCapa)
-    }
+//     inner class LivroViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+//         val titulo = view.findViewById<TextView>(R.id.textViewTitulo)
+//         val autor = view.findViewById<TextView>(R.id.textViewAutor)
+//         val capa = view.findViewById<ImageView>(R.id.imageViewCapa)
+//     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LivroViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_livro, parent, false)
-        return LivroViewHolder(view)
-    }
+//     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LivroViewHolder {
+//         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_livro, parent, false)
+//         return LivroViewHolder(view)
+//     }
 
-    override fun onBindViewHolder(holder: LivroViewHolder, position: Int) {
-        val livro = livros[position]
-        holder.titulo.text = livro.titulo
-        holder.autor.text = livro.autor
-        Glide.with(holder.itemView.context).load(livro.imagemUrl).into(holder.capa)
-        holder.itemView.setOnClickListener { onItemClick(livro) }
-    }
+//     override fun onBindViewHolder(holder: LivroViewHolder, position: Int) {
+//         val livro = livros[position]
+//         holder.titulo.text = livro.titulo
+//         holder.autor.text = livro.autor
+//         Glide.with(holder.itemView.context).load(livro.imagemUrl).into(holder.capa)
+//         holder.itemView.setOnClickListener { onItemClick(livro) }
+//     }
 
-    override fun getItemCount() = livros.size
-}
+//     override fun getItemCount() = livros.size
+// }
 
