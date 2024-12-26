@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gerenciamento de Livros"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="16dp" />
+
+    <Button
+        android:id="@+id/buttonCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar Livros"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonListagem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Listar Livros"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonAlteracao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alterar Livros"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/buttonExclusao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Excluir Livros" />
+</LinearLayout>
