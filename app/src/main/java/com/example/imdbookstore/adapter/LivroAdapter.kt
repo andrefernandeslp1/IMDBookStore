@@ -31,12 +31,17 @@ class LivroAdapter(
         holder.titulo.text = livro.titulo
         holder.autor.text = livro.autor
         
-        // Adiciona tratamento de erro para carregamento da imagem
-        Glide.with(holder.itemView.context)
-            .load(livro.imagemUrl)
-            .placeholder(R.drawable.placeholder_book)
-            .error(R.drawable.error_book)
-            .into(holder.capa)
+        try {
+            Glide.with(holder.itemView.context)
+                .load(livro.imagemUrl)
+                .placeholder(R.drawable.placeholder_book)
+                .error(R.drawable.error_book)
+                .centerCrop()
+                //.timeout(6000) // 6 seconds timeout
+                .into(holder.capa)
+        } catch (e: Exception) {
+            holder.capa.setImageResource(R.drawable.error_book)
+        }
             
         holder.itemView.setOnClickListener { onItemClick(livro) }
     }
