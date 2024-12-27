@@ -1,10 +1,14 @@
 package com.example.imdbookstore.adapter
 
+import android.graphics.drawable.AnimationDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.os.Handler
+import android.os.Looper
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.imdbookstore.model.Livro
@@ -30,17 +34,29 @@ class LivroAdapter(
         val livro = livros[position]
         holder.titulo.text = livro.titulo
         holder.autor.text = livro.autor
-        
+
+        holder.capa.setImageResource(R.drawable.loading_spinner)
+
+
+        holder.capa.setImageResource(R.drawable.loading_spinner)
+        val rotateAnimation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rotate)
+        holder.capa.startAnimation(rotateAnimation)
+
         try {
+          // Adiciona um atraso antes de carregar a imagem
+          Handler(Looper.getMainLooper()).postDelayed({
             Glide.with(holder.itemView.context)
                 .load(livro.imagemUrl)
-                .placeholder(R.drawable.placeholder_book)
+                .placeholder(R.drawable.loading_spinner)
                 .error(R.drawable.error_book)
                 .centerCrop()
-                //.timeout(6000) // 6 seconds timeout
                 .into(holder.capa)
+
+              holder.capa.clearAnimation()
+          }, 1000) // 1 seconds delay
         } catch (e: Exception) {
             holder.capa.setImageResource(R.drawable.error_book)
+            holder.capa.clearAnimation()
         }
             
         holder.itemView.setOnClickListener { onItemClick(livro) }
