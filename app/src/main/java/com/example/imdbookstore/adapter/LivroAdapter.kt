@@ -37,8 +37,6 @@ class LivroAdapter(
 
         holder.capa.setImageResource(R.drawable.loading_spinner)
 
-
-        holder.capa.setImageResource(R.drawable.loading_spinner)
         val rotateAnimation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.rotate)
         holder.capa.startAnimation(rotateAnimation)
 
