@@ -23,6 +23,7 @@ class LivroAdapter(
         val titulo = view.findViewById<TextView>(R.id.textViewTitulo)
         val autor = view.findViewById<TextView>(R.id.textViewAutor)
         val capa = view.findViewById<ImageView>(R.id.imageViewCapa)
+        val editora = view.findViewById<TextView>(R.id.textViewEditora)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LivroViewHolder {
@@ -34,6 +35,7 @@ class LivroAdapter(
         val livro = livros[position]
         holder.titulo.text = livro.titulo
         holder.autor.text = livro.autor
+        holder.editora.text = livro.editora
 
         holder.capa.setImageResource(R.drawable.loading_spinner)
 
