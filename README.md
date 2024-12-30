@@ -12,7 +12,7 @@ IMDBookStore é um **aplicativo Android** para gerenciar uma coleção de livros
 
 ## ⚙️ Funcionalidades
 
-- **Login e Cadastro**: Usuários podem se registrar e fazer login no aplicativo.https://youtu.be/4TA9KESXqfQ
+- **Login e Cadastro**: Usuários podem se registrar e fazer login no aplicativo.
 - **Gerenciamento de Livros**: Adicionar, visualizar, editar e excluir livros da coleção.
 - **Recuperação de Senha**: Função para redefinir a senha do usuário.
 
