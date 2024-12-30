@@ -90,6 +90,7 @@ class AlteracaoLivroActivity : AppCompatActivity() {
 
             if (rowsAffected > 0) {
                 Toast.makeText(this, "Livro atualizado com sucesso!", Toast.LENGTH_SHORT).show()
+                finish()
             } else {
                 Toast.makeText(this, "Erro ao atualizar o livro.", Toast.LENGTH_SHORT).show()
             }

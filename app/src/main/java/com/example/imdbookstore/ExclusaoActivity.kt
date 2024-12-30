@@ -34,6 +34,7 @@ class ExclusaoActivity : AppCompatActivity() {
 
             if (rowsDeleted > 0) {
                 Toast.makeText(this, "Livro excluído com sucesso!", Toast.LENGTH_SHORT).show()
+                finish()
             } else {
                 Toast.makeText(this, "Livro não encontrado.", Toast.LENGTH_SHORT).show()
             }
